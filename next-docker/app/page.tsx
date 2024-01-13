@@ -21,12 +21,15 @@ async function Home() {
     <main className="p-8 bg-gray-100 min-h-screen">
       <section className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
-          <h1 className="text-4xl font-bold mb-6">Registred Tasks</h1>
-          <Link href="/create" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <h1 className="text-4xl font-bold mb-6">Register Tasks</h1>
+          <Link
+            href="/create"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
             Create Task
           </Link>
         </div>
-      
+
         <div className="grid grid-cols-1 gap-6 mt-5">
           {allTasks?.length > 0 &&
             allTasks.map((task) => (
