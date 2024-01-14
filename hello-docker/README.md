@@ -18,9 +18,9 @@ CMD node hello.js
 
 **WORKDIR** --> creating /app directory and working this directory in the linux
 
-**COPY** --> copy this directory files into the WORKDIR (/app directory in the linux)
+**COPY** --> copy this files into the WORKDIR directory (/app directory in the linux)
 
-**CMD** --> run this command on the WORKDIR directory
+**CMD** --> run this command in the WORKDIR directory
 
 Than run **build** command to build an image with name of hello-docker:
 

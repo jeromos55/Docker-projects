@@ -49,23 +49,23 @@ CMD npm run dev
 
 **COPY** --> copying settings into the WORKDIR
 
-**RUN npm install** --> create node environment download packages and cerate folders
+**RUN npm install** --> create node environment, download packages, cerate folders
 
-**COPY** --> copy this directory files into the WORKDIR (/app directory in the linux)
+**COPY** --> copy this files into the WORKDIR directory (/app directory in the linux)
 
 **EXPOSE** --> open a port for communicate
 
 **CMD npm run dev** --> run the project files in the linux
 
-than create a .dockerignore file:
+create a .dockerignore file:
 
 ```
 node_modules/
 ```
 
-this will ignore the node_modules folder to copying to the image because firstly we need to the \*.json to setting npm installing files in the image for avoid problems
+this will ignore the node_modules folder when copying to the image because the json files will be needed to install npm to avoid problems
 
-than we need to modify package.json file with the following: **(--host)**
+we need to modify package.json file with the following: **(--host)**
 
 ```
 "scripts": {
@@ -87,7 +87,7 @@ and run the image with the following:
 docker run -p 5173:5173 react-docker
 ```
 
--p 5173:5173 --> we need to connect to the container's port and the computer's port
+-p 5173:5173 --> we need to link to each other the container's port and the computer's port
 
 this create a container and runs the '**npm run dev**' command in the /app directory on the linux
 eventually we can see that page on the http://localhost:5173/ address
@@ -100,11 +100,11 @@ docker run -p 5173:5173 -v "${pwd}:/app" -v /app/node_modules react-docker
 
 ${pwd} --> the local directory
 
--v "${pwd}:/app" --> we need to connect to local directory and the container's /app directory
+-v "${pwd}:/app" --> we need to link to each other local directory and the container's /app directory
 
--v /app/node_modules --> we need to connect to the container's /app/node_modules directory and the local directory
+-v /app/node_modules --> we need to link to each other the container's /app/node_modules directory and the local directory
 
-if we running the image and seeing that the localhost address and modifying the local directory files the container will synchronize immediately the files.
+if we running the image and we opening up that the localhost address and modifying the local directory files the container will synchronize immediately the files.
 
 we can deploying the image to the cloud with the following:
 
