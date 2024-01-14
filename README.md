@@ -4,58 +4,11 @@ Archive and create docker projects
 
 I create this repository because I find this youtube video https://www.youtube.com/watch?v=GFgJkfScVNU and I want to notes that and documentation for if we will need to create same as docker image and container later it will be help our projects. This video teach me a new way to use docker.
 
-1. Hello-docker project
-2. React-docker project
+1. [Hello-docker project](hello-docker/README.md)
+2. [React-docker project](react-docker/README.Docker.md)
 3. Vite-docker project
 4. mern-docker project
 5. next-docker project
-
-## 1. Hello-docker project
-
-```
-mkdir hello-docker
-cd hello-docker
-```
-
-cerate a Dockerfile:
-
-```
-FROM  node:20-alpine
-WORKDIR /app
-COPY . .
-CMD node hello.js
-```
-
-**FROM** --> alpine linux
-
-**WORKDIR** --> creating /app directory and working this directory in the linux
-
-**COPY** --> copy this directory files into the WORKDIR (/app directory in the linux)
-
-**CMD** --> run this command on the WORKDIR directory
-
-Than run **build** command to build an image with name of hello-docker:
-
-```
-docker build -t hello-docker .
-```
-
--t **_(target)_** image_name
-
-. **_(copy all files and directory)_**
-
-we can run the image and go into the image:
-
-```
-docker run -it hello-docker sh
-```
-
-and we run the node:
-
-```
-/app# node hello.js
-Hello Docker!
-```
 
 ## 2. React-docker project
 
