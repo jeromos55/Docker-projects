@@ -27,6 +27,8 @@ COPY . .
 EXPOSE 8000
 CMD npm start
 ```
+the port with `EXPOSE 8000` is the port that we will use to access the frontend and the `CMD npm start` is the command that will run when the container is created
+
 we need to modify in the every directories the package.json file with the following: **(--host)**
 
 ```json
