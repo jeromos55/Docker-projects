@@ -85,7 +85,7 @@ We can run the command `docker-compose up` to run the services.
 
 ```shell
 cd mern-docker
-docker-compose up
+docker compose up
 ```
 
 This will create four docker images and attaching together.
