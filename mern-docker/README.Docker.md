@@ -117,6 +117,6 @@ The key logic flows are:
 
 - Monitor containers and restart as needed per the YAML config
 
-- So in summary, the docker-compose up command simplifies running multi-container Docker applications by automating the process of building, starting, and linking containers for the services defined in a docker-compose.yml file
+- So in summary, the `docker compose up` command simplifies running multi-container Docker applications by automating the process of building, starting, and linking containers for the services defined in a docker-compose.yml file
 
 Eventually we can see the frontend and backend running in the browser on the http://localhost:5173.
