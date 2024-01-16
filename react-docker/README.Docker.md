@@ -2,19 +2,19 @@
 
 create a react project
 
-```
+```shell
 npm create vite@latest react-docker
 ```
 
 select React --> TypeScript after go into the folder
 
-```
+```shell
 cd react-docker
 ```
 
 create a Dockerfile:
 
-```
+```Dockerfile
 FROM node:20-alpine
 
 RUN addgroup app && adduser -S -G app app
@@ -59,7 +59,7 @@ CMD npm run dev
 
 create a .dockerignore file:
 
-```
+```shell
 node_modules/
 ```
 
@@ -67,7 +67,7 @@ this will ignore the node_modules folder when copying to the image because the j
 
 we need to modify package.json file with the following: **(--host)**
 
-```
+```json
 "scripts": {
     "dev": "vite --host",
     ...
@@ -77,13 +77,13 @@ we need to modify package.json file with the following: **(--host)**
 
 we can build this image with the following:
 
-```
+```shell
 docker build -t react-docker .
 ```
 
 and run the image with the following:
 
-```
+```shell
 docker run -p 5173:5173 react-docker
 ```
 
@@ -94,7 +94,7 @@ eventually we can see that page on the http://localhost:5173/ address
 
 we can modify the code and synchronize the own folders and files to the container files with the following:
 
-```
+```shell
 docker run -p 5173:5173 -v "${pwd}:/app" -v /app/node_modules react-docker
 ```
 
@@ -108,7 +108,7 @@ if we running the image and we opening up that the localhost address and modifyi
 
 we can deploying the image to the cloud with the following:
 
-```
+```shell
 docker login
 docker tag react-docker user_name/react-docker
 docker push user_name/react-docker

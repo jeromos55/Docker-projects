@@ -1,13 +1,13 @@
 ## 1. Hello-docker project
 
-```
+```shell
 mkdir hello-docker
 cd hello-docker
 ```
 
 cerate a Dockerfile:
 
-```
+```Dockerfile
 FROM  node:20-alpine
 WORKDIR /app
 COPY . .
@@ -24,19 +24,19 @@ CMD node hello.js
 
 Than run **build** command to build an image with name of hello-docker:
 
-```
+```shell
 docker build -t hello-docker .
 ```
 
 We can run the image and go into the image:
 
-```
+```shell
 docker run -it hello-docker sh
 ```
 
 and we run the node:
 
-```
-/app# node hello.js
+```shell
+node hello.js
 Hello Docker!
 ```

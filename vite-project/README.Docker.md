@@ -2,19 +2,19 @@
 
 create a vite project
 
-```
+```shell
 npm create vite@latest vite-project
 ```
 
 select React --> TypeScript after go into the folder
 
-```
+```shell
 cd vite-project
 ```
 
 create a Docker setting files with the following:
 
-```
+```shell
 docker init
 ```
 
@@ -34,7 +34,7 @@ Answers:
 
 We need to edit the compose.yaml file with the following:
 
-```
+```yaml
 services:
   web:
     build:
@@ -48,7 +48,7 @@ services:
 
 We need to edit the Dockerfile file with the following:
 
-```
+```Dockerfile
 FROM node:20-alpine
 
 RUN addgroup app && adduser -S -G app app
@@ -104,7 +104,7 @@ this will ignore the node_modules folder when copying to the image because the j
 
 we need to modify package.json file with the following: **(--host)**
 
-```
+```json
 "scripts": {
     "dev": "vite --host",
     ...
@@ -114,7 +114,7 @@ we need to modify package.json file with the following: **(--host)**
 
 We need run composer with the following:
 
-```
+```shell
 docker compose up
 ```
 
