@@ -27,6 +27,15 @@ COPY . .
 EXPOSE 8000
 CMD npm start
 ```
+we need to modify in the every directories the package.json file with the following: **(--host)**
+
+```json
+"scripts": {
+    "dev": "vite --host",
+    ...
+    ...
+}
+```
 
 After all we need create a compose.yaml into the root folder to specify the web services and the database (web, api, db, folders).
 
